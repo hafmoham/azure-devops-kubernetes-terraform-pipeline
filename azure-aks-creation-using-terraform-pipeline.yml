@@ -8,6 +8,11 @@ steps:
 - script: echo Creating AKS Cluster using Terraform!
   displayName: 'Creating AKS Cluster using Terraform'
 
+- task: DownloadSecureFile@1
+  inputs:
+    name: 'public-key'
+    secureFile: 'azure_rsa.pub'
+
 - task: TerraformTaskV4@4
   inputs:
     provider: 'azurerm'
