@@ -9,7 +9,7 @@ jobs:
 
    steps:
    - script: echo Creating AKS Cluster using Terraform!
-     displayName: 'Creating AKS Cluster using Terraform'
+     displayName: 'J1: Creating AKS Cluster using Terraform'
 
    - task: DownloadSecureFile@1
      name: 'publickey'
@@ -21,7 +21,7 @@ jobs:
    dependsOn: job1
    steps:
    - script: echo Setting up Terraform configuration!
-     displayName: 'Setting up Terraform configuration!'
+     displayName: 'J2: Setting up Terraform configuration!'
 
    - task: TerraformTaskV4@4
      inputs:
@@ -35,3 +35,8 @@ jobs:
        backendAzureRmKey: 'keyaksterra'
 
 
+-  job: Job3
+   dependsOn: Job2
+   steps:
+   - script: echo Deploying ConfigMaps AKS Cluster using Terraform!
+     displayName: 'J3: Deploying ConfigMaps AKS Cluster using Terraform'
