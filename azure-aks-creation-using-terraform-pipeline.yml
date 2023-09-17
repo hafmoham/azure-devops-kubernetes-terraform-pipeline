@@ -24,13 +24,13 @@ jobs:
 
    - task: TerraformTaskV4@4
      inputs:
-     provider: 'azurerm'
-     command: 'init'
-     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-     backendServiceArm: 'AS-Practice-Subsciption-001(0151ba51-6f90-4d09-a387-ba3b605c08de)'
-     backendAzureRmResourceGroupName: 'rg-aks-terraform-k8s-prac-aks'
-     backendAzureRmStorageAccountName: 'stgacct4terrak8sakscreat'
-     backendAzureRmContainerName: 'containstacct4terrasaks'
-     backendAzureRmKey: 'keyaksterra'
+       provider: 'azurerm'
+       command: 'init'
+       workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+       backendServiceArm: 'AS-Practice-Subsciption-001(0151ba51-6f90-4d09-a387-ba3b605c08de)'
+       backendAzureRmResourceGroupName: 'rg-aks-terraform-k8s-prac-aks'
+       backendAzureRmStorageAccountName: 'stgacct4terrak8sakscreat'
+       backendAzureRmContainerName: 'containstacct4terrasaks'
+       backendAzureRmKey: 'keyaksterra'
 
 
