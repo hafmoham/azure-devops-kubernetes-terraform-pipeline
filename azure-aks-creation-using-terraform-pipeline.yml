@@ -19,7 +19,6 @@ steps:
 
 -  job: Job2
   
-steps:
 - script: echo Setting up Terraform configuration!
   displayName: 'Setting up Terraform configuration!'
 
