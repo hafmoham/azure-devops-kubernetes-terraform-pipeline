@@ -7,30 +7,30 @@ pool:
 jobs:
 -  job: Job1
 
-steps:
-- script: echo Creating AKS Cluster using Terraform!
-  displayName: 'Creating AKS Cluster using Terraform'
+   steps:
+   - script: echo Creating AKS Cluster using Terraform!
+     displayName: 'Creating AKS Cluster using Terraform'
 
-- task: DownloadSecureFile@1
-  name: 'publickey'
-  inputs:
-    secureFile: 'azure_rsa.pub'
+   - task: DownloadSecureFile@1
+     name: 'publickey'
+     inputs:
+       secureFile: 'azure_rsa.pub'
 
 
 -  job: Job2
-  
-- script: echo Setting up Terraform configuration!
-  displayName: 'Setting up Terraform configuration!'
+  steps:
+   - script: echo Setting up Terraform configuration!
+     displayName: 'Setting up Terraform configuration!'
 
-- task: TerraformTaskV4@4
-  inputs:
-    provider: 'azurerm'
-    command: 'init'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    backendServiceArm: 'AS-Practice-Subsciption-001(0151ba51-6f90-4d09-a387-ba3b605c08de)'
-    backendAzureRmResourceGroupName: 'rg-aks-terraform-k8s-prac-aks'
-    backendAzureRmStorageAccountName: 'stgacct4terrak8sakscreat'
-    backendAzureRmContainerName: 'containstacct4terrasaks'
-    backendAzureRmKey: 'keyaksterra'
+   - task: TerraformTaskV4@4
+     inputs:
+     provider: 'azurerm'
+     command: 'init'
+     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
+     backendServiceArm: 'AS-Practice-Subsciption-001(0151ba51-6f90-4d09-a387-ba3b605c08de)'
+     backendAzureRmResourceGroupName: 'rg-aks-terraform-k8s-prac-aks'
+     backendAzureRmStorageAccountName: 'stgacct4terrak8sakscreat'
+     backendAzureRmContainerName: 'containstacct4terrasaks'
+     backendAzureRmKey: 'keyaksterra'
 
 
