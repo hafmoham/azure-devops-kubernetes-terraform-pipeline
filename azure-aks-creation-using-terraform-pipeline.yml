@@ -16,7 +16,7 @@ steps:
   inputs:
     secureFile: 'azure_rsa.pub'
 
-jobs:
+
 -  job: Job2
   
 steps:
