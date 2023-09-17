@@ -9,8 +9,8 @@ steps:
   displayName: 'Creating AKS Cluster using Terraform'
 
 - task: DownloadSecureFile@1
+  name: 'publickey'
   inputs:
-    name: 'public-key'
     secureFile: 'azure_rsa.pub'
 
 - task: TerraformTaskV4@4
